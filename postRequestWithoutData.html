@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>AJAX Examples</title>
+<script src='jquery/jquery.js'></script>
+<script>
+$(()=>{
+$.ajax({url:"servletFour",type:"post",
+error:function(xhr){
+alert(xhr.status+","+xhr.statusText);
+},
+success:function(designations,status){
+alert(status);
+if(!status)alert('some problem');
+else
+{
+var obj;
+for(var i=0;i<designations.length;i++)
+{
+obj=document.createElement("option");
+obj.value=designations[i].code;
+obj.text=designations[i].title;
+$("#designations").append(obj);
+}
+}
+}
+});
+
+});
+
+</script>
+</head>
+<body>
+<h1>Example 1 (Post without data type example) </h1>
+<select id='designations'>
+</select>
+<br><br>
+<a href='/something/index.html'>Home</a>
+</body>
+</html>

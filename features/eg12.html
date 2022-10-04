@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<script src='jquery/jquery.js'></script>
+<script>
+function doSomething()
+{
+setTimeout(function(){
+alert("Done after 3000 milli seconds");
+},3000);
+};
+
+$(()=>{ 
+$("#button1").click(function(){
+doSomething();
+});
+
+});
+
+</script>
+</head>
+<body>
+<button type='button' id='button1'>Click me</button>
+</body>
+</html>

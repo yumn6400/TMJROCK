@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<script src='jquery/jquery.js'></script>
+<script>
+$.get("eg14.html", function(data, status){
+      
+  if(status=="success")
+     $("div").append(data);
+    });
+
+</script>
+</head>
+<body>
+<h1>Fetch Example</h1>
+<div></div>
+</body>
+</html>

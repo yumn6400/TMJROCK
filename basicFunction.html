@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>AJAX Examples</title>
+<script src='jquery/jquery.js'></script>
+<style>
+div
+{
+background:lightgray;
+}
+</style>
+<script>
+$(()=>{
+  $("#button1").click(function(){
+    $("p").clone().appendTo("body");
+  });
+  $("#button2").click(function(){
+  $("p").wrap("<div></div>");
+  });
+  $("#button3").click(function(){
+  $("p").wrapAll("<div></div>");
+  });
+  $("#button4").click(function(){
+  $("p").wrapInner("<div></div>");
+  });
+  $("#button5").click(function(){
+  $("<h1 style='color:red'>God is amazing</h1>").replaceAll("p");
+  });
+   $("#button6").click(function(){
+  $("p").replaceWith("<h1>I love Ujjain</h1>");
+  });
+   $("#button7").click(function(){
+  $("p").remove();
+  });
+   $("#button8").click(function(){
+  $("p").detach();
+  });
+});
+</script>
+</head>  
+<body>
+<p id='a1'>God is great</p>
+<h1> I love ujjain</h1>
+<p id='a2'>Ujjain is the city of Gods</p>
+<button id='button1'>Clone </button>
+<button id='button2'>wrap </button>
+<button id='button3'>wrapAll </button>
+<button id='button4'>wrapInner </button>
+<button id='button5'>replaceAll </button>
+<button id='button6'>replaceWith </button>
+<button id='button7'>Remove </button>
+<button id='button8'>detach </button>
+</body>
+  
+</html>

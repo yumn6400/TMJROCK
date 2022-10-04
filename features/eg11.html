@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>AJAX Examples</title>
+<script>
+function getDesignations()
+{
+var xmlHttpRequest=new XMLHttpRequest();
+xmlHttpRequest.onreadystatechange=function(){
+if(this.readyState==4)
+{
+if(this.status==200)
+{
+var responseData=this.responseText;
+var obj;
+var designations=JSON.parse(responseData);
+alert(designations);
+var designationsComboBox=document.getElementById("designations");
+for(var i=0;i<designations.length;i+=2)
+{
+obj=document.createElement("option");
+obj.value=designations[i].code;
+obj.text=designations[i].title;
+designationsComboBox.appendChild(obj);
+}
+}
+else
+{
+alert('some problem');
+}
+
+}
+
+}
+xmlHttpRequest.open('GET','..\servletOne',true);
+xmlHttpRequest.send();
+
+
+}
+window.addEventListener('load',getDesignations);
+</script>
+</head>
+<body>
+<h1>Example 1 (Get type example) </h1>
+<select id='designations'>
+</select>
+<br><br>
+<a href='/something/index.html'>Home</a>
+</body>
+</html>

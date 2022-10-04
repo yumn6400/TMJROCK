@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>AJAX Examples</title>
+<script src='jquery/jquery.js'></script>
+<script>
+function getDesignationByCode(){
+var c=$("#code").val();
+$.ajax({url:'servletTwo',
+type:'GET',
+data:{code:c},
+success:
+function(responseData,status){
+if(!status)alert('some problem');
+else
+{
+if(responseData=="INVALID")alert('Invalid designation code');
+else
+{
+var splits=responseData.split(",");
+$('#title').append(splits[1]);
+}
+}
+
+}});
+
+};
+
+</script>
+</head>
+<body>
+<h1>Example 2 (Get type example with data ) </h1>
+<h1>Enter designation code :<input type='text' id='code'>
+
+<button type='button' onclick='getDesignationByCode()'>Ok</button><br>
+Designation :<span id='title'></span>
+<br><br>
+<a href='/something/index.html'>Home</a>
+</body>
+</html>

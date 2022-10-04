@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<script src='jquery/jquery.js'></script>
+<script>
+$(()=>{
+$("#button2").click(function(){
+$("<b>God is great<br></b>").insertBefore("p");
+$("<b>Ujjain is the city of Gods<br></b>").insertAfter("p");
+$("<b>I live in Ujjain<br></b>").appendTo("p");
+$("<b>I love Ujjain<br></b>").prependTo("p");
+});
+});
+
+</script>
+</head>
+<body>
+<div id='something' width='500px'>
+<button type='button' id='button2'>Ok</button>
+<p></p>
+</div>
+</body>
+</html>

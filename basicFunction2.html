@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<meta='charset='utf-8'>
+<head>
+<script>
+function justDoIt1()
+{
+var v={
+K:4000
+};
+var m=v.c||function(){
+return 100;
+}
+alert(v.c?m:m());
+//alert(m);
+}
+function justDoIt2()
+{
+(function(k)
+{
+alert(k);
+})(100);
+}
+function sam(a=10,b=20,c=30)
+{
+alert(a);
+alert(b);
+alert(c);
+}
+function justDoIt3()
+{
+sam(1000,2000,3000);
+sam(100,200);
+sam(1);
+sam();
+}
+function veryCool(p,q,r)
+{
+alert(p+","+q+","+r);
+}
+function justDoIt4()
+{
+var a=[10,20,30];
+veryCool(...a);
+}
+function superCool(...x)
+{
+alert(x.length);
+alert(x);
+}
+function justDoIt5()
+{
+superCool(10,20,30,40);
+}
+function whatIsThis()
+{
+return [1000,2000,3000];
+}
+function justDoIt6()
+{
+var[a,b,c]=whatIsThis();
+//alert(a);
+//alert(b);
+//alert(c);
+var[p,,q]=whatIsThis();
+//alert(p+","+q);
+var[i,]=whatIsThis();
+alert(i);
+}
+function justDoIt7()
+{
+var b={
+wattage:60,
+setWattage(e)
+{
+this.wattage=e;
+},
+getWattage()
+{
+return this.wattage;
+}
+};
+alert(b.wattage);
+alert(b.getWattage());
+b.setWattage(240);
+alert(b.wattage);
+alert(b.getWattage());
+}
+function justDoIt8()
+{
+var a=(p,q)=>p+q;
+var k=(p,q)=>{
+return p*q;
+}
+alert(a(10,20));
+alert(k(100,200));
+}
+</script>
+</head>
+<body>
+<button onclick='justDoIt1()'>1</button>
+<button onclick='justDoIt2()'>2</button>
+<button onclick='justDoIt3()'>3</button>
+<button onclick='justDoIt4()'>4</button>
+<button onclick='justDoIt5()'>5</button>
+<button onclick='justDoIt6()'>6</button>
+<button onclick='justDoIt7()'>7</button>
+<button onclick='justDoIt8()'>8</button>
+</body>
+</html>

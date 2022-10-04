@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>AJAX Examples</title>
+<script src='jquery/jquery.js'></script>
+<script>
+$(document).ready(function(){
+$("button").click(function(){
+$("div").load("getRequestWithoutData.html");
+});
+});
+</script>
+</head>
+<body>
+
+<button>Load</button>
+
+<div></div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>AJAX Examples</title>
+<script src='jquery/jquery.js'></script>
+<script>
+function saveEnquiry()
+{
+var firstName=$("#firstName").val();
+var lastName=$("#lastName").val();
+var age=$("#age").val();
+var customer={
+"firstName":firstName,
+"lastName":lastName,
+"age":age
+};
+alert(JSON.stringify(customer));
+var whatever=$('#whatever');
+whatever.empty();
+$.ajax({url:'servletThree',
+
+dataType:'json',
+timeout:500,
+error:function(xhr,textStatus){
+ if(textStatus=='timeout')
+{
+alert('failed due to  timeout');
+}
+},
+statusCode:{
+404:function(){ alert('Not working');},
+200:function(){ alert('working');}
+},
+
+
+type:'post',
+contentType:'application/json',
+data:JSON.stringify(customer),
+success:function(customer){
+var a="FirstName :"+customer.firstName+"<br>";
+a=a+"LastName :"+customer.lastName+"<br>";
+a=a+"Age :"+customer.age+"<br>";
+whatever.append(a);
+
+}});
+}
+</script>
+</head>
+<body>
+<h1> Post type request </h1>
+First Name <input type='text' id='firstName'><br>
+Last Name <input type='text' id='lastName'><br>
+Age <input type='text' id='age'><br>
+<button type='button' onclick='saveEnquiry()'>Save</button>
+<br>
+<div id='whatever'></div>
+<br>
+<a href='/ajax2/index.html'>Home</a>
+</body>
+</html>

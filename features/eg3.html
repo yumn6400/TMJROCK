@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>JQuery with table example</title>
+<script src='jquery/jquery.js'></script>
+<style>
+.tbl
+{
+border:1px solid black;
+border-collapse:collapse;
+}
+</style>
+<script>
+$(()=>{
+$("table").addClass("tbl");
+$("table th").addClass("tbl");
+$("table td").addClass("tbl");
+$("table thead").css("background","gray");
+$("table thead").css("color","pink");
+$("table td:nth-child(1)").css("background","blue");
+$("table tbody tr").filter(":even").css("background","lightgray");
+$("table tbody tr :contains('Ujjain')").css("background","#55ffcc");
+$("table tbody tr :contains('Sam')").next().css("background","black");
+$("table tbody tr :contains('Sam')").nextAll().css("color","white");
+$("table tbody td :contains('Ujjain')").parent().css("font","60pt");
+$("table tbody td :contains('4.')").children().css("color","#55ccff");
+
+
+});
+</script>
+
+
+</head>
+<body>
+<table>
+<thead>
+<tr>
+<th>S.no.</th>
+<th>Name</th>
+<th>City</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1.</td><td>Sam</td><td>Ujjain</td></tr>
+<tr><td>2.</td><td>tom</td><td>Indore</td></tr>
+<tr><td>3.</td><td>ram</td><td>Bhopal</td></tr>
+<tr><td>4.</td><td>Shyam</td><td>Dewas</td></tr>
+<tr><td>5.</td><td>Mohan</td><td>Ujjain</td></tr>
+</tbody>
+</table>
+
+</body>
+</html>

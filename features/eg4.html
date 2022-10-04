@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<script src='jquery/jquery.js'></script>
+<script>
+
+function $(k)
+{
+alert('just do it '+k);
+}
+
+function doSomething()
+{
+//$("#button1").css("color","blue");
+jQuery("#button1").css("color","blue");
+}
+
+jQuery.noConflict();
+
+jQuery(($)=>{
+
+$("#button2").on('click',function(){
+alert("I am button 2");
+});
+
+$("#button3").on('click',function(){
+$(this).css('color','red');
+});
+$("#button4").on('click',function(){
+$(this).css('font-size','24pt');
+});
+$("#button5").click(function(){
+ $("#abcd").toggleClass("xyz");
+});
+
+$("#mainContainer").click(function(ev){
+if(ev.target==this)
+{
+alert('main container clicked');
+}
+});
+
+$("#mainContainer2").click(function(ev){
+alert('main container 2 clicked');
+});
+
+$("#childContainer2").click(function(ev){
+alert('child container 2 clicked');
+ev.stopPropagation();
+});
+
+$("#mmm").click(function(ev){
+alert('mmm clicked');
+ev.stopPropagation();
+});
+
+$("#button7").click(function(ev){
+alert('button7 clicked');
+ev.stopPropagation();
+});
+
+$("#button8").click(function(ev){
+alert('form is being submitted with value'+$("#nm").val());
+if($("#nm").val()==0)
+{
+ev.preventDefault();
+}
+});
+
+$("#d1").click(function(ev){
+if($(ev.target).is("#d1"))alert('d1 clicked');
+if($(ev.target).is("#d2"))alert('d2 clicked');
+if($(ev.target).is("#s1"))alert('s1 clicked');
+});
+
+$("#button9").click(function(ev){
+alert('button 9 clicked');
+$("#button10").trigger('click');
+});
+$("#button10").click(function(ev){
+alert('button 10 clicked');
+});
+
+
+});
+
+
+</script>
+
+<style>
+.xyz
+{
+background:gray;
+}
+</style>
+
+
+</head>
+<body>
+<button type='button' id='button1' onclick='doSomething()'>(1) Click me</button>
+<button type='button' id='button2' '>(2) click me</button>
+<button type='button' id='button3' '>(3) click me</button>
+<button type='button' id='button4' '>(4) click me</button>
+<button type='button' id='button5' '>(5) click me</button>
+
+<div id='abcd' class='xyz'>
+God is great,Ujjain is the city of Gods.
+</div>
+
+
+
+<div id='mainContainer'>
+Some matter in main container
+<div id='childContainer'>
+Some matter in child container
+<span id='lmn'>
+<button id='button6' type='button'>(6)click me</button>
+</span></div></div>
+
+<div id='mainContainer2'>
+Some matter in main container
+<div id='childContainer2'>
+Some matter in child container
+<span id='mmm'>
+<button id='button7' type='button'>(7)click me</button>
+</span></div></div>
+
+
+<form action='whatever'>
+Enter something<input type='text' id='nm'><br>
+<button id='button8' type='submit'>Submit</button>
+</form>
+
+<div id='d1'>
+Good<br>
+<div id='d2'>Bad<br>
+<span id='s1'>Ugly</span>
+</div>
+</div>
+<button id='button9' type='button'>(9) click me</button>
+<button id='button10' type='button'>(10) click me</button>
+
+
+
+
+</body>
+</html>

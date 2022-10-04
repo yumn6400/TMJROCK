@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>AJAX Examples</title>
+<script src='jquery/jquery.js'></script>
+<script>
+ $(document).ready(function() {
+ $(document).ajaxStart(function() {
+ alert("AJAX request started");
+ });
+ $("button").click(function() {
+ $("div").load(
+ "getRequestWithoutData.html");
+  });
+  });
+</script>
+</head>  
+<body>
+<button>Change Content </button>
+<div></div>
+</body>
+  
+</html>

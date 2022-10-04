@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<script src='jquery/jquery.js'></script>
+<style>
+.xyz
+{
+margin-top:80px;
+margin-left:50px;
+opacity:0%;
+}
+</style>
+<script>
+var x=1;
+$(()=>{
+$("#button1").click(function(){
+
+if(x==1)
+{
+x=0;
+$("#d1").animate({"margin-top":"0px"},1000).animate({"opacity":"100%"},"slow").animate({"margin-left":"0px"},"slow").queue(function(xx){
+alert("great");
+xx();
+}).hide('slow');
+}
+else
+{
+$("#d1").show("slow");
+$("#d1").animate({"margin-top":"80px"},1000).animate({"opacity":"0%"},"slow").animate({"margin-left":"50px"},"slow");
+x=1;
+}
+});
+});
+</script>
+</head>
+<body>
+<div id='d1' class='xyz'>
+something something something something<br>
+something something something something <br>
+something something something something<br>
+something something something something <br>
+something something something something<br>
+something something something something <br>
+something something something something<br>
+something something something something <br>	
+
+</div>
+<button id='button1' type='button'>Click me</button>
+</body>
+</html>

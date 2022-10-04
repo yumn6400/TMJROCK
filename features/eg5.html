@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<script src='jquery/jquery.js'></script>
+<script>
+$(()=>{
+
+
+
+$(document).on('keydown',function(ev){
+
+$("#board").append("keydown"+ev.which+","+ev.key+","+ev.code+"<br>");
+if(ev.ctrlKey)$("#board").append("keyup CTRL Key<br>");
+if(ev.altKey)$("#board").append("keyup ALT Key<br>");
+if(ev.shiftKey)$("#board").append("keyup Shift key<br>");
+if(ev.metaKey)$("#board").append("keydown Meta Key<br>");
+});
+
+
+
+
+$(document).on('keyup',function(ev){
+
+$("#board").append("keyup"+ev.which+","+ev.key+","+ev.code+"<br>");
+if(ev.ctrlKey)$("#board").append("keyup CTRL Key<br>");
+if(ev.altKey)$("#board").append("keyup ALT Key<br>");
+if(ev.shiftKey)$("#board").append("keyup Shift key<br>");
+if(ev.metaKey)$("#board").append("keyup Meta Key<br>");
+});
+
+
+$(document).on('keypress',function(ev){
+
+$("#board").append("keypress"+ev.which+","+ev.key+","+ev.code+"<br>");
+if(ev.ctrlKey)$("#board").append("keypress CTRL Key<br>");
+if(ev.altKey)$("#board").append("keypress ALT Key<br>");
+if(ev.shiftKey)$("#board").append("keypress Shift key<br>");
+if(ev.metaKey)$("#board").append("keypress Meta Key<br>");
+});
+});
+
+</script>
+
+</head>
+<body>
+<div id='board'>
+</div>
+</body>
+</html>

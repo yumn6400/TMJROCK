@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<script src='jquery/jquery.js'></script>
+<style>
+.something
+{
+font-size:14pt;
+color:red;
+}
+</style>
+<script>
+var d2State=1;
+$(()=>{
+$("#button1").click(function(){
+alert($("#d1.something").css("font-size"));
+alert($("#d1.something").css("color"));
+alert($("#d1.something").css("font-family"));
+$("#d1.something").css("font-family","Verdana");
+});
+
+$("#button2").click(function(){
+if(d2State)
+{
+//$("#d2").hide();
+//$("#d2").hide('slow');
+//$("#d2").fadeOut("slow");
+//$("#d2").slideUp("slow");
+}
+else
+{
+//$("#d2").show();
+//$("#d2").show('fast');
+//$("#d2").fadeIn("slow");
+//$("#d2").slideDown("fast");
+
+}
+//d2State=!d2State;
+//$("#d2").slideToggle("slow");
+$("#d2").fadeToggle("slow");
+});
+
+
+
+});
+
+
+</script>
+
+
+</head>
+<body>
+<div id='d1' class='something'>
+This is the cool section<br>
+Do whatever is required
+</div>
+<div id='d2'>
+God is great, Ujjain is the city of Gods.<br>
+God is great, Ujjain is the city of Gods.<br>
+God is great, Ujjain is the city of Gods.<br>
+God is great, Ujjain is the city of Gods.<br>
+God is great, Ujjain is the city of Gods.<br>
+God is great, Ujjain is the city of Gods.<br>
+God is great, Ujjain is the city of Gods.<br>
+God is great, Ujjain is the city of Gods.<br>
+God is great, Ujjain is the city of Gods.<br>
+God is great, Ujjain is the city of Gods.<br>
+</div>
+<button type='button' id='button1'>(1) click me</button>
+<button type='button' id='button2'>(2) click me</button>
+</body>
+</html>

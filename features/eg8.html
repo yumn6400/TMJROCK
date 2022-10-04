@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<script src='jquery/jquery.js'></script>
+<style>
+.more
+{
+background:red;
+color:white;
+padding:10px;
+font-weight:bold;
+text-decoration:none;
+}
+</style>
+<script>
+$(()=>{
+$("#d1 p").eq(1).hide();
+$("#d1ReadMore").click(function(){
+$("#d1 p").eq(1).animate({"height":"toggle","width":"toggle","opacity":"toggle"},2000,function(){
+if($("#d1 p").eq(1).is(":hidden"))
+{
+$("#d1ReadMore").text("Read more...");
+}
+else
+{
+$("#d1ReadMore").text("Read less...");
+}
+
+});
+
+
+});
+
+});
+
+
+</script>
+</head>
+<body>
+<div id='d1'>
+<p>
+first line: Something something Something Something Something<br>
+line: Something something Something Something Something<br>
+line: Something something Something Something Something<br>
+line: Something something Something Something Something<br>
+line: Something something Something Something Something<br>
+line: Something something Something Something Something<br>
+</p>
+<p>
+line: Something something Something Something Something<br>
+line: Something something Something Something Something<br>
+line: Something something Something Something Something
+line: Something something Something Something Something<br>
+line: Something something Something Something Something<br>
+line: Something something Something Something Something<br>
+line: Something something Something Something Something<br>
+<br>
+</p>
+<a href='#' id='d1ReadMore' class='more' >Read More ...</a>
+</div>
+</body>
+</html>
