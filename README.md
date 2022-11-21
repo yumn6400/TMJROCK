@@ -1,8 +1,8 @@
-# JQuery_Library
+# TMJROCK
 Feature related to jquery are described.
 
 
-                    JQUERY Features
+                   TMJROCK Features
 With in <script> …</script>
 1)	function great(){}
 $(great);     ## great function will be invoked on document loaded.  ##
